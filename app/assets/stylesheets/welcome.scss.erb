@@ -32,10 +32,10 @@ $nav-item-bg: $blue-3;
 $nav-item-fg: $blue-1;
 
 $section-bg: $blue-2;
-$section-fg: white;
+$section-fg: $blue-4;
 
-$portfolio-bg: $blue-1;
-$portfolio-fg: $blue-4;
+$portfolio-bg: $blue-3;
+$portfolio-fg: white;
 
 $contact-bg: $yellow-1;
 $contact-fg: $yellow-4;
@@ -46,8 +46,8 @@ $issues-fg: $red-4;
 $item-bg: $blue-3;
 $item-fg: white;
 
-$play-bg: $red-1;
-$play-fg: $red-4;
+$play-bg: $yellow-1;
+$play-fg: $yellow-4;
 
 
 .container {
@@ -65,7 +65,8 @@ $play-fg: $red-4;
 .hero h1 {
   text-align: center;
   margin: 0px;
-  font-size: 36pt;
+  font-size: 48pt;
+  padding: 12px;
 }
 
 .section {
@@ -76,13 +77,13 @@ $play-fg: $red-4;
 }
 
 .section h2 { font-size: 36pt; }
-.section h3 { font-size: 24pt; }
+.section h3 { font-size: 26pt; }
 .section p { font-size: 18pt; }
 
 .section-content {
   background-color: rgba(255,255,255,0.45);
   border-radius: 3px;
-  padding: 50px;
+  padding: 24px;
 }
 
 .nav {
@@ -93,8 +94,7 @@ $play-fg: $red-4;
 }
 
 .nav a {
-  margin: 20px;
-  padding: 22px;
+  margin: 10px;
   background-color: $nav-item-bg;
   color: $nav-item-fg;
   font-size: 16pt;
@@ -112,7 +112,7 @@ $play-fg: $red-4;
 }
 
 .portfolio-item {
-  padding: 60px;
+  padding: 100px;
   margin-left: 0px;
   margin-right: 0px;
   background-color: $item-bg;
@@ -121,11 +121,12 @@ $play-fg: $red-4;
 
 .portfolio-item a.play {
   padding: 20px;
-  display: inline;
-  float: right;
+  border-radius: 10px;
   background-color: $play-bg;
   color: $play-fg;
-  font-size: 18pt;
+  font-size: 20pt;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 #busyverse {
