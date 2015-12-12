@@ -25,13 +25,13 @@ $container-fg: black;
 $hero-bg: $blue-3;
 $hero-fg: white;
 
-$nav-bg: $blue-1;
-$nav-fg: $blue-1;
+$nav-bg: $blue-3;
+$nav-fg: white;
 
-$nav-item-bg: $blue-1;
-$nav-item-fg: $blue-2;
+$nav-item-bg: $blue-3;
+$nav-item-fg: $blue-1;
 
-$section-bg: $blue-4;
+$section-bg: $blue-2;
 $section-fg: white;
 
 $portfolio-bg: $blue-1;
@@ -46,11 +46,11 @@ $issues-fg: $red-4;
 $item-bg: $blue-3;
 $item-fg: white;
 
-$play-bg: $yellow-1;
-$play-fg: $yellow-4;
+$play-bg: $red-1;
+$play-fg: $red-4;
+
 
 .container {
-  border: 1px solid black;
   background-color: $container-bg;
   color: $container-fg;
   margin: 0 auto;
@@ -62,57 +62,84 @@ $play-fg: $yellow-4;
   color: white;
 }
 
-.hero h1 { 
-  text-align: center; 
+.hero h1 {
+  text-align: center;
   margin: 0px;
-  font-size: 48pt;
+  font-size: 36pt;
 }
 
-.content-section {
+.section {
   text-align: left;
   background-color: $section-bg;
   color: $section-fg;
-  padding: 45px;
-  margin: 0px;
+  padding: 28px;
 }
 
-.content-section h2 { font-size: 48pt; }
-.content-section h3 { font-size: 36pt; }
-.content-section p { font-size: 24pt; }
+.section h2 { font-size: 36pt; }
+.section h3 { font-size: 24pt; }
+.section p { font-size: 18pt; }
+
+.section-content {
+  background-color: rgba(255,255,255,0.45);
+  border-radius: 3px;
+  padding: 50px;
+}
 
 .nav {
   background-color: $nav-bg;
   color: $nav-fg;
   padding: 2px;
-  
+  text-align: center;
 }
 
 .nav a {
-  margin: 10px;
+  margin: 20px;
+  padding: 22px;
   background-color: $nav-item-bg;
   color: $nav-item-fg;
-  font-size: 18pt;
+  font-size: 16pt;
 }
 
 .portfolio {
   background-color: $portfolio-bg;
   color: $portfolio-fg;
+  padding: 0px;
+  padding-top: 2px;
+}
+
+.portfolio h2 {
+  padding-left: 60px;
 }
 
 .portfolio-item {
-  padding: 40px;
-  margin: 120px;
+  padding: 60px;
+  margin-left: 0px;
+  margin-right: 0px;
   background-color: $item-bg;
   color: $item-fg;
 }
 
 .portfolio-item a.play {
-  padding: 40px;
+  padding: 20px;
   display: inline;
   float: right;
   background-color: $play-bg;
   color: $play-fg;
-  font-size: 24pt;
+  font-size: 18pt;
+}
+
+#busyverse {
+  background: 
+    linear-gradient(90deg, $item-bg, rgba(250,250,250,0.48)),
+    url(<%= asset_path 'busyverse.png' %>) no-repeat
+    ;
+}
+
+#dragon {
+  background: 
+    linear-gradient(90deg, $item-bg, rgba(250,250,250,0.48)),
+    url(<%= asset_path 'dragon.png' %>) no-repeat
+    ;
 }
 
 .contact {
