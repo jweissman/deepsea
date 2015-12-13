@@ -1,17 +1,43 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$cerulean-0: #306D84;      // Main Primary color */
+$cerulean-1: #7CABBD;
+$cerulean-2: #4C849A;
+$cerulean-3: #1C5A71;
+$cerulean-4: #0B445A;
+
+$blue-0: #3D4A90;  // Main Secondary color (1) */
+$blue-1: #8892C7;
+$blue-2: #5A66A7;
+$blue-3: #27347C;
+$blue-4: #142062;
+
+$yellow-0: #D3AB47;  // Main Secondary color (2) */
+$yellow-1: #FFE4A3;
+$yellow-2: #F5CF73;
+$yellow-3: #B58C26;
+$yellow-4: #8F6A0D;
+
+$gold-0: #D39047;   // Main Complement color */
+$gold-1: #FFD3A3;
+$gold-2: #F5B773;
+$gold-3: #B57126;
+$gold-4: #8F510D;
+
 $blue-0: #5992C2;      // Main Primary color */
 $blue-1: #B2D3EF;
 $blue-2: #80B1DA;
 $blue-3: #3A75A7;
 $blue-4: #206196;
 
-$yellow-0: #FFDB6B;  // Main Secondary color (1) */
-$yellow-1: #FFEEBA;
-$yellow-2: #FFE38F;
-$yellow-3: #FFD34C;
-$yellow-4: #E9B925;
+$green-0: #339959;  // Main Secondary color (2) */
+$green-1: #84CEA0;
+$green-2: #54B277;
+$green-3: #1C8342;
+$green-4: #09682C;
+
 
 $red-0: #FF976B;  // Main Secondary color (2) */
 $red-1: #FFCEBA;
@@ -19,84 +45,103 @@ $red-2: #FFB08F;
 $red-3: #FF814C;
 $red-4: #E95F25;
 
-$container-bg: white;
-$container-fg: black;
+$primary-bg: black;
+$primary-fg: white;
 
-$hero-bg: $blue-3;
+$alternate-bg: $blue-4;
+$alternate-fg: $blue-1;
+
+$secondary-bg: $gold-1;
+$secondary-fg: $gold-4;
+
+$complement-bg: $green-4;
+$complement-fg: $green-1;
+
+$tertiary-bg: $red-4;
+$tertiary-fg: $red-1;
+
+$hero-bg: linear-gradient(rgba(250,250,250,0.08), $primary-bg),
+  url(<%= asset_path 'busyverse-alt.png' %>) no-repeat;
 $hero-fg: white;
 
-$nav-bg: $blue-3;
+$nav-bg: $cerulean-4;
 $nav-fg: white;
 
-$nav-item-bg: $blue-3;
-$nav-item-fg: $blue-1;
+$nav-item-bg: $nav-bg;
+$nav-item-fg: $primary-fg;
 
-$section-bg: $blue-2;
-$section-fg: $blue-4;
+$welcome-bg: $primary-bg;
+$welcome-fg: $cerulean-1;
 
-$portfolio-bg: $blue-3;
-$portfolio-fg: white;
+$portfolio-bg: $primary-bg;
+$portfolio-fg: $secondary-fg;
 
-$contact-bg: $yellow-1;
-$contact-fg: $yellow-4;
+$contact-bg: $secondary-bg;
+$contact-fg: $secondary-fg;
 
-$issues-bg: $red-1;
-$issues-fg: $red-4;
+$issues-bg: $tertiary-bg;
+$issues-fg: $tertiary-fg;
 
-$item-bg: $blue-3;
+$item-bg: $primary-bg;
 $item-fg: white;
 
-$play-bg: $yellow-1;
-$play-fg: $yellow-4;
+$play-bg: $primary-bg;
+$play-fg: $primary-fg;
+
+$translucent: rgba(200,200,200,0.25);
 
 .container {
-  background-color: $container-bg;
-  color: $container-fg;
   margin: 0 auto;
 }
 
 .hero {
-  background-color: $hero-bg;
+  background: $hero-bg;
   color: $hero-fg;
-  color: white;
+  max-height: 480px;
 }
 
 .hero h1 {
   text-align: center;
   margin: 0px;
-  font-size: 48pt;
-  padding: 12px;
+  font-size: 60pt;
+}
+
+.hero h2 {
+  text-align: center;
 }
 
 .section {
   text-align: left;
-  background-color: $section-bg;
-  color: $section-fg;
-  padding: 28px;
+  padding: 48px;
+  min-width: 960px;
 }
 
-.section h2 { font-size: 36pt; }
-.section h3 { font-size: 26pt; }
-.section p { font-size: 18pt; }
+.section h2 { font-size: 32pt; }
+.section h3 { font-size: 24pt; }
+.section p { font-size: 16pt; }
 
 .section-content {
-  background-color: rgba(255,255,255,0.45);
-  border-radius: 3px;
-  padding: 24px;
+  background-color: $translucent;
+  padding: 40px;
+  margin: 0px;
 }
 
 .nav {
-  background-color: $nav-bg;
+  float: top;
+  background-color: none;
   color: $nav-fg;
-  padding: 2px;
   text-align: center;
+  padding: 2px;
+  margin: 0px;
 }
 
+.nav :after { clear: both; }
+
 .nav a {
-  margin: 10px;
-  background-color: $nav-item-bg;
+  text-decoration: none;
+  text-transform: uppercase;
   color: $nav-item-fg;
-  font-size: 16pt;
+  font-weight: bold;
 }
 
 .portfolio {
@@ -116,27 +161,42 @@ $play-fg: $yellow-4;
   margin-right: 0px;
   background-color: $item-bg;
   color: $item-fg;
+  min-width: 960px;
 }
 
 .portfolio-item a.play {
+  text-transform: uppercase;
   padding: 20px;
   border-radius: 10px;
   background-color: $play-bg;
   color: $play-fg;
-  font-size: 20pt;
+  font-size: 16pt;
   text-decoration: none;
   font-weight: bold;
 }
 
+.portfolio-item h3 small {
+  font-size: 12pt;
+  font-style: italic;
+}
+
+#busyverse a.play:hover { 
+  background-color: $blue-3; 
+}
+
+#dragon a.play:hover { 
+  background-color: $green-3; 
+}
+
 #busyverse {
   background:
-    linear-gradient(90deg, $item-bg, rgba(250,250,250,0.48)),
+    linear-gradient(90deg, $alternate-bg, rgba(250,250,250,0.48)),
     url(<%= asset_path 'busyverse.png' %>) no-repeat;
 }
 
 #dragon {
   background:
-    linear-gradient(90deg, $item-bg, rgba(250,250,250,0.48)),
+    linear-gradient(90deg, $complement-bg, rgba(250,250,250,0.48)),
     url(<%= asset_path 'dragon.png' %>) no-repeat;
 }
 
@@ -148,6 +208,13 @@ $play-fg: $yellow-4;
 .issues {
   background-color: $issues-bg;
   color: $issues-fg;
+}
+
+.welcome {
+  background-color: $welcome-bg;
+  color: $welcome-fg;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .footer {
